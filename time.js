@@ -1,4 +1,6 @@
 console.log('时间函数已加载');
+//初始化函数
+displayTime_min()
 function displayTime_min() {
     var now = new Date();
     var hours = now.getHours();

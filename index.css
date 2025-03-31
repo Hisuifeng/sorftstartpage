@@ -18,9 +18,6 @@ html, body {
     position: absolute;
 }
 * {
-    /*CSS Reset*/
-    margin: 0;
-    padding: 0;
    /*全局禁止选中*/
     -webkit-user-select:none;
     -moz-user-select:none;   
