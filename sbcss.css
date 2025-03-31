@@ -1,0 +1,14 @@
+#zhazhahui{/*愚人节特定*/
+    background: url("images/abstract/tanwanlanyue.jpg") no-repeat left center / cover;
+     width: 20%;
+     height: 20%;
+
+     border: 5px solid;
+     border-color: blue;
+ 
+     position: fixed;
+     margin: 0 auto;
+     left: 0;
+     top: 0;
+     z-index: 1;
+ }

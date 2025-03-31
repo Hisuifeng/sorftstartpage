@@ -5,6 +5,7 @@
 <link rel="icon" href="images/favicon.png">
 <title>轻-sorft起始页</title>
 <link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="sbcss.css">
 <script id="s2" type="text/javascript" src=""></script>
 </head>
 
@@ -14,6 +15,16 @@
         <div class="time">
             <p id="time_min">00:00</p>
         </div>
+    </div>
+
+    <div id="zhazhahui" onclick="play()">
+        <p style="text-indent: 12px;font-size: 40px;color: goldenrod;line-height: 0.4;">我是理解</p>
+        <p style="text-indent: 12px;font-size: 17px;line-height: 0.4;">
+            <span style="color: chartreuse;">无兄弟，</span>
+            <span style="color: red;">不传奇！</span>
+        </p>
+        <p style="text-indent: 12px;font-size: 20px;line-height: 0.4;" id="sb_text">我在小木斧等你！</p>
+        <audio id="myAudio" src="https://music.90svip.cn/api.php?get=url&type=wy&id=29717271&sign=531768d9ee9c14d3608e106b85a03d5e&t=1743427135" preload="auto"></audio>
     </div>
 
     <div class="search_bar">
@@ -27,20 +38,21 @@
 
     <div id="url_bar">
         <div id="url1" class="button button_special url" onclick="window.location.href='https://github.com/'">
-            <img class="url_img" src="https://github.githubassets.com/favicons/favicon.png">
+            <img class="url_img" src="images/github_favicon.png">
         </div>
         <div id="url2" class="button button_special url" onclick="window.location.href='https://github.com/'">
-            <img class="url_img" src="https://github.githubassets.com/favicons/favicon.png">
+            <img class="url_img" src="images/github_favicon.png">
         </div>
         <div id="url3" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
-            <img class="url_img" src="https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico">
+            <img class="url_img" src="images/bilibili_favicon.ico">
         </div>
-        <div id="url4" class="button button_special url" onclick="window.location.href='https://github.com/'">
-            <img class="url_img" src="https://i0.hdslb.com/bfs/static/jinkela/long/images/favicon.ico">
+        <div id="url4" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
+            <img class="url_img" src="images/bilibili_favicon.ico">
         </div>
     </div>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="time.js"></script>
     <script type="text/javascript" src="keyword.js"></script> 
+    <script type="text/javascript" src="sbjs.js"></script>
 </body>
 </html>
