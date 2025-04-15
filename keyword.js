@@ -27,15 +27,31 @@ function changeJS(searchengine,keyword) {
 }
 function backURL(searchengine,keyword){
     if (searchengine==0){
-        return("http://suggestion.baidu.com/su?wd=" + keyword + "&p=3&cb=jsonp")
+        return("https://suggestion.baidu.com/su?wd=" + keyword + "&p=3&cb=jsonp");
+    }
+    if (searchengine==1){
+        return("https://sg1.api.bing.com/qsonhs.aspx?type=cb&cb=jsonp&q=" + keyword);
     }
 }
 //3.处理返回的数据
 //[jsonp]
 function jsonp(data) {
     //console.log(data)
-    obj = data;
-    refreshMenu_keyword(obj.s);
+    let obj = data;
+    if (searchengine == 0){
+        refreshMenu_keyword(obj.s);
+    }
+    if (searchengine == 1){
+        let list = [];
+        //必应的搜索有AS和VS两种关键词
+        //判断长度
+        for (let i = 0; i < obj.AS.Results.length; i++) {
+            for (let j = 0; j < obj.AS.Results[i].Suggests.length; j++) {
+                list.push(obj.AS.Results[i].Suggests[j].Txt);
+            }
+        }
+        refreshMenu_keyword(list);
+    }
 }
 //4.完成刷新操作
 //[html元素操作]
@@ -47,10 +63,10 @@ function refreshMenu_keyword(keyword){
     var num2 = 25+keyword.length*20+(keyword.length-1)*3;
     key_words_bar_box.style.height = `${num1}`+"px";
     key_words_bar.style.height = `${num2}`+"px";
-    for (var i=0;i<keyword.length;i++){
+    for (let i = 0;i < 10;i++){
 	    removeKeyword();
     }
-    for (var i=0;i<keyword.length;i++){
+    for (let i = 0;i < keyword.length;i++){
 	    addKeyword(keyword[i]);
     }
 }

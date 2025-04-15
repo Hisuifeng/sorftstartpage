@@ -8,7 +8,7 @@ html, body {
     padding: 0;
 }
 #background {
-    background: url('images/wallpaper/wallpaper.jpg') no-repeat left center / cover;
+    background: url('') no-repeat left center / cover;
     /*background-image: url("images/wallpaper/wallpaper.jpg");*/
     /*div全屏*/
     width: 110%;

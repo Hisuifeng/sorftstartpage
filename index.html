@@ -17,30 +17,31 @@
     </div>
 
     <div class="search_bar">
-        <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()" oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyup_submit(event);" placeholder="在此输入搜索内容">
-        <div id="key_words_bar_box" tabindex=-1>
+        <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()" oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyup_submit(event);" placeholder='在此输入搜索内容 或 使用">help"查询起始页命令'>
+        <div id="key_words_bar_box" tabindex=0>
             <div id="key_words_bar">
-                <li class="button" tabindex="0" onclick="refocus()">搜索引擎：百度</li>
+                <li id="searchengine" class="button" tabindex="0" onclick="refocus()">搜索引擎：必应(Alt+任意键切换)</li>
             </div>
         </div>
     </div>
 
     <div id="url_bar">
         <div id="url1" class="button button_special url" onclick="window.location.href='https://github.com/'">
-            <img class="url_img" src="images/github_favicon.png">
+            <img id="url1_img" class="url_img" src="images/github_favicon.png">
         </div>
         <div id="url2" class="button button_special url" onclick="window.location.href='https://github.com/'">
-            <img class="url_img" src="images/github_favicon.png">
+            <img id="url2_img" class="url_img" src="images/github_favicon.png">
         </div>
         <div id="url3" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
-            <img class="url_img" src="images/bilibili_favicon.ico">
+            <img id="url3_img" class="url_img" src="images/bilibili_favicon.ico">
         </div>
         <div id="url4" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
-            <img class="url_img" src="images/bilibili_favicon.ico">
+            <img id="url4_img" class="url_img" src="images/bilibili_favicon.ico">
         </div>
     </div>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="time.js"></script>
-    <script type="text/javascript" src="keyword.js"></script> 
+    <script type="text/javascript" src="keyword.js"></script>
+    <script type="text/javascript" src="cookie.js"></script>
 </body>
 </html>
