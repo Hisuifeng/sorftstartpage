@@ -90,7 +90,7 @@ function toSearchTigger(event){
 //功能函数集
 function setWallpaper(walllpaperNum,type){
     if (type==-1){
-        var url = "https://www.52desk.com/bizhi/a29578.html";
+        var url = "https://img.52desk.com/tp/074156aTmnL.jpg";
         background.style.background = "url("+ url +")" + " no-repeat left center / cover";
         console.log("图片已选:固定");
     }
@@ -105,7 +105,7 @@ function setWallpaper(walllpaperNum,type){
         background.style.background = "url("+ walllpaper[choose] +")" + " no-repeat left center / cover";
         console.log("图片已选:"+ walllpaper[choose]);
     }
-    else{
+    if (type==1){
         var url = "https://www.dmoe.cc/random.php";
         background.style.background = "url("+ url +")" + " no-repeat left center / cover";
         console.log("图片已选:API随机");
