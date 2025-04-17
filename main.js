@@ -10,7 +10,7 @@ var choosetag = -1;
 var background = document.getElementById("background");
 var searchengine = 1;
 //初始函数
-randomWallpaper(7,1)//0是本地随机 1是api随机
+setWallpaper(7,-1)//0是本地随机 1是api随机 -1是固定
 //1.触发器
 background.addEventListener('mousemove',function(event) {
     var windowWidth = window.innerWidth / 2;
@@ -88,7 +88,12 @@ function toSearchTigger(event){
     toSearch(0,text.innerHTML);
 }
 //功能函数集
-function randomWallpaper(walllpaperNum,type){
+function setWallpaper(walllpaperNum,type){
+    if (type==-1){
+        var url = "https://www.52desk.com/bizhi/a29578.html";
+        background.style.background = "url("+ url +")" + " no-repeat left center / cover";
+        console.log("图片已选:固定");
+    }
     if (type==0){
         var walllpaper = new Array;
         walllpaperNum = walllpaperNum + 1;
