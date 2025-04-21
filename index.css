@@ -135,8 +135,6 @@ html, body {
     left: 7px;
 
     overflow: hidden;
-
-    list-style-type:none
 }
 li{
     color: #ffffff;
@@ -145,6 +143,8 @@ li{
     height: 23px;
     border-radius: 10px;
     line-height: 23px; /* 容器高度-居中 */
+
+    list-style-type:none;
 }
 .hightlight{
     background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
@@ -155,27 +155,9 @@ li{
     transition-duration: 300ms;
 }
 
-/* 滚动条整体样式 */
-::-webkit-scrollbar {
-    width: 10px; /* 纵向滚动条宽度 */
-    height: 10px; /* 横向滚动条高度 */
-}   
-/* 滚动条轨道 */
-::-webkit-scrollbar-track {
-    background: rgba(16, 31, 28, 0.1);
-    border-radius: 2em;
-}   
-/* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-    background-color: rgba(144, 147, 153, 0.5);
-    border-radius: 2em;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}  
-/* 滚动条滑块悬停效果 */
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(144, 147, 153, 0.3);
-}
+::-webkit-scrollbar{
+    display: none;
+} /* 以前有美化，但是效果不好删了 */
 
 #url_bar{
     background-color: #ff050500;
@@ -239,6 +221,138 @@ li{
     transform: translate(-50%,-50%);
 }
 
+#blur{
+    background-color: #ffffff13; /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
+    backdrop-filter: blur(3px); /* 应用模糊效果 */
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    display: none;
+}
+#setting_bar{
+    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
+    backdrop-filter: blur(3px); /* 应用模糊效果 */
+
+    width: 544px;
+    height: 500px;
+    border-radius: 10px 10px 10px 10px;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    
+    display: none;
+}
+.p-setting{
+    color: #ffffff;
+    font-size: 25px;
+    padding: 0 20px;
+    height: 23px;
+    border-radius: 10px;
+    line-height: 23px; /* 容器高度-居中 */
+}
+.ps-setting{
+    color: #000000;
+    font-size: 20px;
+    padding: 0 20px;
+    height: 23px;
+    border-radius: 10px;
+    line-height: 23px; /* 容器高度-居中 */
+}
+.pss-setting{
+    color: #000000;
+    padding: 0 20px;
+    font-size: 15px;
+}
+
+#setting_bar_left{
+    position: fixed;
+    top: 0;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+#setting_bar_right{
+    position: fixed;
+    top: 0;
+    width: 70%;
+    border-radius: 0 10px 10px 0;
+    margin-left: 30%;
+    height: 100%;
+
+    background-color: #ffffff1a; /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
+    backdrop-filter: blur(3px); /* 应用模糊效果 */
+
+    overflow-x: auto;
+    clip-path: inset(0px 0px);/* 裁剪 */
+}
+.setting_bar_right_input{
+    width: 380px;
+    text-align:center;
+}
+.setting_input{
+    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
+    backdrop-filter: blur(6px); /* 应用模糊效果 */
+    
+    font-size: 15px;
+
+    width: 80%;
+    height: 10px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #6b6b6b3e;
+    border-radius: 20px;
+    outline: none;
+}
+.setting_input:hover {
+    background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+.setting_input:focus {
+    background-color:  #ffffff;/* 设置背景颜色并使其部分透明 */ 
+    top: 40%;
+    transition-property: background-color,top;
+    transition-duration: 300ms;
+}
+.setting_input:active {
+    background-color:  #d3d3d3d7;/* 设置背景颜色并使其部分透明 */ 
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+#button_setting{
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+
+    position: fixed;
+    left: 100%;
+    top: 100%;
+    transform: translate(-40px,-40px);
+}
+#button_img{
+    border-radius: 30px;
+    width: 160px;
+    height: 30px;
+
+    color: #ffffff;
+    font-size: 15px;
+    text-align:center;
+    line-height: 30px; /* 容器高度-居中 */
+
+    position: fixed;
+    left: 0%;
+    top: 100%;
+    transform: translate(10px,-60px);
+}
+
 .button:hover {
     background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
     box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
@@ -253,11 +367,24 @@ li{
     transition-property: background-color,color;
     transition-duration: 100ms;
 }
-.button_special{
+.button_normal{
     background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
     box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
     backdrop-filter: blur(3px); /* 应用模糊效果 */
     transition: all 100ms ease 0s;
+    border-radius: 30px;
+}
+.button_normal_setting{
+    color: #000000;
+    font-size: 15px;
+    text-align:center;
+    height: 30px;
+    border-radius: 20px;
+    line-height: 30px; /* 容器高度-居中 */
+
+    width: 60px;
+    position: relative;
+    left: 80%;
 }
 .button{
     transition: all 100ms ease 0s;

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<link rel="icon" href="images/favicon.png">
-<title>轻-sorft起始页</title>
-<link rel="stylesheet" type="text/css" href="index.css">
-<script id="s2" type="text/javascript" src=""></script>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.png">
+    <title>轻-sorft起始页</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script id="s2" type="text/javascript" src=""></script>
 </head>
 
 <body id="body">
@@ -17,7 +18,9 @@
     </div>
 
     <div class="search_bar">
-        <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()" oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyup_submit(event);" placeholder='在此输入搜索内容 或 使用">help"查询起始页命令'>
+        <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()"
+            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyup_submit(event);"
+            placeholder='欢迎使用轻-sorft起始页！'>
         <div id="key_words_bar_box" tabindex=0>
             <div id="key_words_bar">
                 <li id="searchengine" class="button" tabindex="0" onclick="refocus()">搜索引擎：必应(Alt+任意键切换)</li>
@@ -26,22 +29,93 @@
     </div>
 
     <div id="url_bar">
-        <div id="url1" class="button button_special url" onclick="window.location.href='https://github.com/'">
+        <div id="url1" class="button button_normal url" onclick="window.location.href='https://github.com/'">
             <img id="url1_img" class="url_img" src="images/github_favicon.png">
         </div>
-        <div id="url2" class="button button_special url" onclick="window.location.href='https://github.com/'">
+        <div id="url2" class="button button_normal url" onclick="window.location.href='https://github.com/'">
             <img id="url2_img" class="url_img" src="images/github_favicon.png">
         </div>
-        <div id="url3" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
+        <div id="url3" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
             <img id="url3_img" class="url_img" src="images/bilibili_favicon.ico">
         </div>
-        <div id="url4" class="button button_special url" onclick="window.location.href='https://www.bilibili.com'">
+        <div id="url4" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
             <img id="url4_img" class="url_img" src="images/bilibili_favicon.ico">
         </div>
     </div>
+
+    <img id="button_setting" class="button_normal button" src="images/setting.png" onclick="clickSetting()">
+    <p id="button_img" class="button"
+        onclick="window.location.href='https://github.com/Hisuifeng/sorftstartpage/issues/1'">喜欢这张图片吗？</p>
+
+    <div id="blur"></div>
+    <div id="setting_bar">
+        <div id="setting_bar_left">
+            <p class="p-setting">设置</p>
+            <li class="button" onclick="clickFavoriteBar()">快捷方式</li>
+            <li class="button" onclick="clickWallpaperBar()">背景</li>
+            <li class="button" onclick="clickExit()">退出设置</li>
+        </div>
+        <div id="setting_bar_right">
+            <div id="setting_bar_right_favorite">
+                <p class="ps-setting">快捷方式</p>
+                <p class="pss-setting">|快捷方式设置</p>
+                <p class="pss-setting">第一个快捷方式</p>
+                <div class="setting_bar_right_input">
+                    <input class="setting_input" type="text" placeholder='url'>
+                    <p></p>
+                    <input class="setting_input" type="text" placeholder='icon'>
+                </div>
+                <p class="pss-setting">第二个快捷方式</p>
+                <div class="setting_bar_right_input">
+                    <input class="setting_input" type="text" placeholder='url'>
+                    <p></p>
+                    <input class="setting_input" type="text" placeholder='icon'>
+                </div>
+                <p class="pss-setting">第三个快捷方式</p>
+                <div class="setting_bar_right_input">
+                    <input class="setting_input" type="text" placeholder='url'>
+                    <p></p>
+                    <input class="setting_input" type="text" placeholder='icon'>
+                </div>
+                <p class="pss-setting">第四个快捷方式</p>
+                <div class="setting_bar_right_input">
+                    <input class="setting_input" type="text" placeholder='url'>
+                    <p></p>
+                    <input class="setting_input" type="text" placeholder='icon'>
+                </div>
+                <p class="button button_normal button_normal_setting">保存</p>
+                <p></p>
+            </div>
+            <div id="setting_bar_right_wallpaper">
+                <p class="ps-setting">背景</p>
+                <p class="pss-setting">|壁纸设置</p>
+                <div class="setting_bar_right_input">
+                    <img id="setting_wallpaper" src="" style="width: 70%;height: 70%;border-radius: 10px;">
+                    <p class="pss-setting">目前使用的图片背景</p>
+                </div>
+                <p class="pss-setting">更改壁纸</p>
+                <div class="setting_bar_right_input">
+                    <input class="setting_input" type="text" placeholder='壁纸链接'>
+                </div>
+                <p class="button button_normal button_normal_setting">保存</p>
+                <p class="pss-setting">|关于壁纸设置的说明</p>
+                <p class="pss-setting">在该功能开发时考虑过多种情况，随机壁纸存在效率问题，除非本地部署，即使是使用了图床也不可避免有着加载慢的问题。因此默认情况下使用静态壁纸:(</p>
+                <p class="pss-setting">如何使用随机壁纸呢？</p>
+                <p class="pss-setting">在壁纸链接中输入数字保存后即可使用随机壁纸。</p>
+                <p class="pss-setting">-1 使用默认壁纸</p>
+                <p class="pss-setting">0 使用仓库随机壁纸</p>
+                <p class="pss-setting">1 使用api随机壁纸</p>
+                <p class="pss-setting">当然，你也可以使用现成的随机壁纸api并输入到壁纸链接输入框中。</p>
+            </div>
+        </div>
+    </div>
+
+
+
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="time.js"></script>
     <script type="text/javascript" src="keyword.js"></script>
     <script type="text/javascript" src="cookie.js"></script>
 </body>
+
 </html>

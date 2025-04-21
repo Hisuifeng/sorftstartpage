@@ -36,7 +36,6 @@ function backURL(searchengine,keyword){
 //3.处理返回的数据
 //[jsonp]
 function jsonp(data) {
-    //console.log(data)
     let obj = data;
     if (searchengine == 0){
         refreshMenu_keyword(obj.s);
