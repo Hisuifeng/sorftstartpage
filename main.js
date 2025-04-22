@@ -10,7 +10,7 @@ var choosetag = -1;
 var background = document.getElementById("background");
 var searchengine = 1;
 //初始函数
-setWallpaper(7,-1)//0是本地随机 1是api随机 -1是固定
+
 //1.触发器
 background.addEventListener('mousemove',function(event) {
     var windowWidth = window.innerWidth / 2;
@@ -132,7 +132,7 @@ function settings(text){
 }//命令
 
 //UI函数集
-function setWallpaper(walllpaperNum,type){
+function setWallpaper(walllpaperNum,type,walllpaperurl){
     if (type==-1){
         var url = "https://img.52desk.com/tp/074156aTmnL.jpg";
         console.log("图片已选:固定");
@@ -151,6 +151,10 @@ function setWallpaper(walllpaperNum,type){
     if (type==1){
         var url = "https://www.dmoe.cc/random.php";
         console.log("图片已选:API随机");
+    }
+    if (type>1){
+        url = walllpaperurl;
+        console.log("图片已选:自定义");
     }
     background.style.background = "url("+ url +")" + " no-repeat left center / cover";
     document.getElementById("setting_wallpaper").setAttribute("src",url)

@@ -61,29 +61,29 @@
                 <p class="pss-setting">|快捷方式设置</p>
                 <p class="pss-setting">第一个快捷方式</p>
                 <div class="setting_bar_right_input">
-                    <input class="setting_input" type="text" placeholder='url'>
+                    <input id="setting_input1_url" class="setting_input" type="text" placeholder='url'>
                     <p></p>
-                    <input class="setting_input" type="text" placeholder='icon'>
+                    <input id="setting_input1_icon" class="setting_input" type="text" placeholder='icon'>
                 </div>
                 <p class="pss-setting">第二个快捷方式</p>
                 <div class="setting_bar_right_input">
-                    <input class="setting_input" type="text" placeholder='url'>
+                    <input id="setting_input2_url" class="setting_input" type="text" placeholder='url'>
                     <p></p>
-                    <input class="setting_input" type="text" placeholder='icon'>
+                    <input id="setting_input2_icon" class="setting_input" type="text" placeholder='icon'>
                 </div>
                 <p class="pss-setting">第三个快捷方式</p>
                 <div class="setting_bar_right_input">
-                    <input class="setting_input" type="text" placeholder='url'>
+                    <input id="setting_input3_url" class="setting_input" type="text" placeholder='url'>
                     <p></p>
-                    <input class="setting_input" type="text" placeholder='icon'>
+                    <input id="setting_input3_icon" class="setting_input" type="text" placeholder='icon'>
                 </div>
                 <p class="pss-setting">第四个快捷方式</p>
                 <div class="setting_bar_right_input">
-                    <input class="setting_input" type="text" placeholder='url'>
+                    <input id="setting_input4_url" class="setting_input" type="text" placeholder='url'>
                     <p></p>
-                    <input class="setting_input" type="text" placeholder='icon'>
+                    <input id="setting_input4_icon" class="setting_input" type="text" placeholder='icon'>
                 </div>
-                <p class="button button_normal button_normal_setting">保存</p>
+                <p class="button button_normal button_normal_setting" onclick="setFavorite()">保存</p>
                 <p></p>
             </div>
             <div id="setting_bar_right_wallpaper">
@@ -95,9 +95,9 @@
                 </div>
                 <p class="pss-setting">更改壁纸</p>
                 <div class="setting_bar_right_input">
-                    <input class="setting_input" type="text" placeholder='壁纸链接'>
+                    <input id="setting_input_wallpaperurl" class="setting_input" type="text" placeholder='壁纸链接'>
                 </div>
-                <p class="button button_normal button_normal_setting">保存</p>
+                <p class="button button_normal button_normal_setting" onclick="setWallpaperCookie()">保存</p>
                 <p class="pss-setting">|关于壁纸设置的说明</p>
                 <p class="pss-setting">在该功能开发时考虑过多种情况，随机壁纸存在效率问题，除非本地部署，即使是使用了图床也不可避免有着加载慢的问题。因此默认情况下使用静态壁纸:(</p>
                 <p class="pss-setting">如何使用随机壁纸呢？</p>
