@@ -19,7 +19,7 @@
 
     <div class="search_bar">
         <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()"
-            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyup_submit(event);"
+            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyupEvent(event);"
             placeholder='欢迎使用轻-sorft起始页！'>
         <div id="key_words_bar_box" tabindex=0>
             <div id="key_words_bar">
@@ -47,7 +47,7 @@
     <p id="button_img" class="button"
         onclick="window.location.href='https://github.com/Hisuifeng/sorftstartpage/issues/1'">喜欢这张图片吗？</p>
 
-    <div id="blur"></div>
+    <div id="blur" onclick="clickExit()"></div>
     <div id="setting_bar">
         <div id="setting_bar_left">
             <p class="p-setting">设置</p>
@@ -109,6 +109,7 @@
             </div>
         </div>
     </div>
+
 
 
 

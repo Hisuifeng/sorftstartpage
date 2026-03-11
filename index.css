@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     /*固定*/
     min-height: 100%;
     height: 100%;
@@ -7,6 +8,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 #background {
     background: url('') no-repeat left center / cover;
     /*background-image: url("images/wallpaper/wallpaper.jpg");*/
@@ -16,15 +18,18 @@ html, body {
     left: 0;
     top: 0;
     position: absolute;
+    z-index: -100;
 }
+
 * {
-   /*全局禁止选中*/
-    -webkit-user-select:none;
-    -moz-user-select:none;   
-    -ms-user-select:none;  
-    user-select:none;
+    /*全局禁止选中*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.time_bar{
+
+.time_bar {
     background-color: #ffffff00;
     width: 250px;
     height: 100px;
@@ -35,24 +40,27 @@ html, body {
     left: 50%;
     top: 30%;
     z-index: 1;
-    transform: translate(-50%,-50%);
-}
-.time{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100%;
-}
-#time_min{
-    color:#ffffff;
-    font-size:55px;
-}
-#date{
-    color:#69c1ff67;
-    font-size:20px;
+    transform: translate(-50%, -50%);
 }
 
-.search_bar{
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#time_min {
+    color: #ffffff;
+    font-size: 55px;
+}
+
+#date {
+    color: #69c1ff67;
+    font-size: 20px;
+}
+
+.search_bar {
     background-color: #ff000000;
     width: 600px;
     height: 180px;
@@ -63,14 +71,17 @@ html, body {
     left: 50%;
     top: 40%;
     z-index: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 #search_bar {
-    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(6px); /* 应用模糊效果 */
-    
+    background-color: #ffffff8b;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(6px);
+    /* 应用模糊效果 */
+
     font-size: 14px;
 
     background-image: url('images/search1.png');
@@ -89,31 +100,41 @@ html, body {
 
     transition: all 300ms ease 0s;
 }
+
 #search_bar:hover {
-    background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
+    background-color: #ffffffcb;
+    /* 设置背景颜色并使其部分透明 */
     transition-property: background-color;
     transition-duration: 300ms;
 }
+
 #search_bar:focus {
-    background-color:  #ffffff;/* 设置背景颜色并使其部分透明 */ 
+    background-color: #ffffff;
+    /* 设置背景颜色并使其部分透明 */
     background-image: url('images/search2.png');
     top: 40%;
-    transition-property: background-color,background-image,top;
+    transition-property: background-color, background-image, top;
     transition-duration: 300ms;
 }
+
 #search_bar:active {
-    background-color:  #d3d3d3d7;/* 设置背景颜色并使其部分透明 */ 
+    background-color: #d3d3d3d7;
+    /* 设置背景颜色并使其部分透明 */
     transition-property: background-color;
     transition-duration: 300ms;
 }
 
-#key_words_bar_box{
-    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+#key_words_bar_box {
+    background-color: #ffffff5f;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
 
     width: 544px;
-    height: 34px;/*height: 230px;*/
+    height: 34px;
+    /*height: 230px;*/
     border-radius: 10px 10px 10px 10px;
 
     position: fixed;
@@ -123,7 +144,8 @@ html, body {
 
     display: none;
 }
-#key_words_bar{
+
+#key_words_bar {
     background-color: #ffffff00;
     /*overflow:auto;*/
     width: 532px;
@@ -136,30 +158,38 @@ html, body {
 
     overflow: hidden;
 }
-li{
+
+li {
     color: #ffffff;
     font-size: 15px;
     padding: 0 20px;
     height: 23px;
     border-radius: 10px;
-    line-height: 23px; /* 容器高度-居中 */
+    line-height: 23px;
+    /* 容器高度-居中 */
 
-    list-style-type:none;
+    list-style-type: none;
 }
-.hightlight{
-    background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+
+.hightlight {
+    background-color: #ffffff94;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
     color: #000000;
-    transition-property: background-color,box-shadow,backdrop-filter,color;
+    transition-property: background-color, box-shadow, backdrop-filter, color;
     transition-duration: 300ms;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
-} /* 以前有美化，但是效果不好删了 */
+}
 
-#url_bar{
+/* 以前有美化，但是效果不好删了 */
+
+#url_bar {
     background-color: #ff050500;
     width: 600px;
     height: 60px;
@@ -168,49 +198,50 @@ li{
     left: 50%;
     top: 60%;
     z-index: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-#url1{
-    border-radius: 30px;
+
+#url1 {
     width: 60px;
     height: 60px;
 
     position: fixed;
     left: 20%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-#url2{
-    border-radius: 30px;
+
+#url2 {
     width: 60px;
     height: 60px;
 
     position: fixed;
     left: 40%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-#url3{
-    border-radius: 30px;
+
+#url3 {
     width: 60px;
     height: 60px;
 
     position: fixed;
     left: 60%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-#url4{
-    border-radius: 30px;
+
+#url4 {
     width: 60px;
     height: 60px;
 
     position: fixed;
     left: 80%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.url_img{
+
+.url_img {
     margin: auto;
     width: 30px;
     height: 30px;
@@ -218,66 +249,77 @@ li{
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-#blur{
-    background-color: #ffffff13; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+#blur {
+    background-color: #ffffff13;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
     width: 100%;
     height: 100%;
-    z-index: 0;
 
     display: none;
 }
-#setting_bar{
-    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
 
-    width: 544px;
+#setting_bar {
+    background-color: #ffffffa5;
+    /* 设置背景颜色并使其部分透明 *rgba(255, 255, 255, 0.735)*/
+    box-shadow: 0 30px 45px #0000004f;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
+
+    width: 45%;
     height: 500px;
     border-radius: 10px 10px 10px 10px;
 
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
-    
+
     display: none;
 }
-.p-setting{
+
+.p-setting {
     color: #ffffff;
     font-size: 25px;
     padding: 0 20px;
     height: 23px;
     border-radius: 10px;
-    line-height: 23px; /* 容器高度-居中 */
+    line-height: 23px;
+    /* 容器高度-居中 */
 }
-.ps-setting{
+
+.ps-setting {
     color: #000000;
     font-size: 20px;
     padding: 0 20px;
     height: 23px;
     border-radius: 10px;
-    line-height: 23px; /* 容器高度-居中 */
+    line-height: 23px;
+    /* 容器高度-居中 */
 }
-.pss-setting{
+
+.pss-setting {
     color: #000000;
     padding: 0 20px;
     font-size: 15px;
 }
 
-#setting_bar_left{
-    position: fixed;
+#setting_bar_left {
     top: 0;
     float: left;
     width: 30%;
     height: 100%;
 }
-#setting_bar_right{
+
+#setting_bar_right {
     position: fixed;
     top: 0;
     width: 70%;
@@ -285,22 +327,30 @@ li{
     margin-left: 30%;
     height: 100%;
 
-    background-color: #ffffff1a; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+    background-color: #ffffffb2;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
 
     overflow-x: auto;
-    clip-path: inset(0px 0px);/* 裁剪 */
+    clip-path: inset(0px 0px);
+    /* 裁剪 */
 }
-.setting_bar_right_input{
-    width: 380px;
-    text-align:center;
+
+.setting_bar_right_input {
+    text-align: center;
 }
-.setting_input{
-    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(6px); /* 应用模糊效果 */
-    
+
+.setting_input {
+    background-color: #ffffff5f;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(6px);
+    /* 应用模糊效果 */
+
     font-size: 15px;
 
     width: 80%;
@@ -310,24 +360,30 @@ li{
     border-radius: 20px;
     outline: none;
 }
+
 .setting_input:hover {
-    background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
-    transition-property: background-color;
-    transition-duration: 300ms;
-}
-.setting_input:focus {
-    background-color:  #ffffff;/* 设置背景颜色并使其部分透明 */ 
-    top: 40%;
-    transition-property: background-color,top;
-    transition-duration: 300ms;
-}
-.setting_input:active {
-    background-color:  #d3d3d3d7;/* 设置背景颜色并使其部分透明 */ 
+    background-color: #ffffff94;
+    /* 设置背景颜色并使其部分透明 */
     transition-property: background-color;
     transition-duration: 300ms;
 }
 
-#button_setting{
+.setting_input:focus {
+    background-color: #ffffff;
+    /* 设置背景颜色并使其部分透明 */
+    top: 40%;
+    transition-property: background-color, top;
+    transition-duration: 300ms;
+}
+
+.setting_input:active {
+    background-color: #d3d3d3d7;
+    /* 设置背景颜色并使其部分透明 */
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+#button_setting {
     border-radius: 30px;
     width: 30px;
     height: 30px;
@@ -335,57 +391,72 @@ li{
     position: fixed;
     left: 100%;
     top: 100%;
-    transform: translate(-40px,-40px);
+    transform: translate(-40px, -40px);
 }
-#button_img{
+
+#button_img {
     border-radius: 30px;
     width: 160px;
     height: 30px;
 
     color: #ffffff;
     font-size: 15px;
-    text-align:center;
-    line-height: 30px; /* 容器高度-居中 */
+    text-align: center;
+    line-height: 30px;
+    /* 容器高度-居中 */
 
     position: fixed;
     left: 0%;
     top: 100%;
-    transform: translate(10px,-60px);
+    transform: translate(10px, -60px);
 }
 
 .button:hover {
-    background-color:  #ffffff94;/* 设置背景颜色并使其部分透明 */ 
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+    background-color: #ffffff94;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #0000001a;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
     color: #000000;
-    transition-property: background-color,box-shadow,backdrop-filter,color;
+    transition-property: background-color, box-shadow, backdrop-filter, color;
     transition-duration: 300ms;
 }
+
 .button:active {
-    background-color:  #d3d3d3d7;/* 设置背景颜色并使其部分透明 */ 
+    background-color: #d3d3d3d7;
+    /* 设置背景颜色并使其部分透明 */
     color: #000000;
-    transition-property: background-color,color;
+    transition-property: background-color, color;
     transition-duration: 100ms;
 }
-.button_normal{
-    background-color: #ffffff5f; /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a; /* 添加阴影效果 */
-    backdrop-filter: blur(3px); /* 应用模糊效果 */
+
+.button_normal {
+    background-color: #ffffff5f;
+    /* 设置背景颜色并使其部分透明 */
+    box-shadow: 0 30px 45px #00000054;
+    /* 添加阴影效果 */
+    backdrop-filter: blur(3px);
+    /* 应用模糊效果 */
     transition: all 100ms ease 0s;
     border-radius: 30px;
 }
-.button_normal_setting{
+
+.button_normal_setting {
     color: #000000;
     font-size: 15px;
-    text-align:center;
+    text-align: center;
     height: 30px;
     border-radius: 20px;
-    line-height: 30px; /* 容器高度-居中 */
+    line-height: 30px;
+    /* 容器高度-居中 */
 
     width: 60px;
     position: relative;
-    left: 80%;
+    float: right;
+    right: 5%;
 }
-.button{
+
+.button {
     transition: all 100ms ease 0s;
 }

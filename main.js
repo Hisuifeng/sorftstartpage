@@ -1,4 +1,4 @@
-var arttext =
+let arttext =
     " __   __   __   ___ ___     __        __   ___ \n" +
     '/__` /  \\ |__) |__   |     |__)  /\\  / _` |__  \n' +
     '.__/ \\__/ |  \\ |     |     |    /~~\\ \\__> |___ \n\n' +
@@ -26,18 +26,16 @@ function keywordfun() {
 function unshowSearchKeyWordBarTigger() {
     setTimeout("unshowSearchKeyWordBar()", "200");//延迟是因为要等待动画
 }
-function keyup_submit(event) {
-    var keyword = document.getElementById('search_bar').value;
+function keyupEvent(event) {
+    var input_words = document.getElementById('search_bar').value;
     var keywords = document.getElementsByClassName("keyword");
     if (event.keyCode == 13) {
         var text = document.getElementById('search_bar').value;
-        if (settings(text) == 0) {
-            if (choosetag != -1) {
-                text = keywords[choosetag].innerHTML;
-                keyword = text;
-            }
-            toSearch(searchengine, keyword);
+        if (choosetag != -1) {
+            text = keywords[choosetag].innerHTML;
+            input_words = text;
         }
+        toSearch(searchengine, input_words);
     }//回车事件
     if (event.keyCode == 38) {
         if (choosetag - 1 > keywords.length - 1) {
@@ -116,20 +114,6 @@ function changeChooseEngineBarText(text) {
     var searchenginebar = document.getElementById('searchengine');
     searchenginebar.innerHTML = text;
 }
-function settings(text) {
-    let i = 0;
-    if (text == ">help") {
-        let list = ["命令帮助(此界面不能使用上下键)：", ">setting favorite 设置或者刷新收藏"];
-        refreshMenu_keyword(list);
-        i = 1;
-    }
-    if (text == ">setting favorite") {
-        clearCookie("favorite");
-        checkCookie();
-        i = 1;
-    }
-    return (i);
-}//命令
 
 //UI函数集
 function setWallpaper(walllpaperNum, type, walllpaperurl) {
@@ -204,7 +188,8 @@ function showElements(Element) {
 }
 
 //搜索框文字
-id_autoTask = setInterval(autoTask, 5000);
+var id_autoTask = setInterval(autoTask, 5000);
+var id_autoText
 var global_i = 0;
 var global_t = 1;
 var text = "";
@@ -213,24 +198,23 @@ function autoText() {
     document.getElementById("search_bar").setAttribute("placeholder", text.substring(0, global_i));
     if (global_i == text.length) {
         global_i = 0;
-        clearInterval(id_autoText)
+        clearInterval(id_autoText);
     }
 }
 function autoTask() {
     if (global_t == 0) {
         text = "欢迎使用轻-sorft起始页！";
-        id_autoText = setInterval(autoText, 100);
     }
     if (global_t == 1) {
         text = "在此输入搜索内容";
-        id_autoText = setInterval(autoText, 100);
     }
     if (global_t == 2) {
-        text = '或 使用">help"查询起始页命令';
-        id_autoText = setInterval(autoText, 100);
+        text = '按下 Tab 可以快速进行输入';
     }
     if (global_t == 3) {
+        text = 'Alt + 任意键可以切换搜索引擎';
         global_t = -1;
     }
+    id_autoText = setInterval(autoText, 100);
     global_t += 1;
 }

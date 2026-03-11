@@ -2,7 +2,7 @@ console.log('联想词函数已加载');
 //流程：触发器->更改js发送请求->处理返回的数据->完成刷新操作
 //2.更改js发送请求
 //[修改js文件]
-function changeJS(searchengine,keyword) {
+function changeJS(searchengine, keyword) {
     // 获取 <head> 标签
     let head = document.head;
     let myjs;
@@ -15,7 +15,7 @@ function changeJS(searchengine,keyword) {
 
     // 准备标签的 src 属性
     str = scriptToRemove.src.split('/');
-    myjs = backURL(searchengine,keyword);
+    myjs = backURL(searchengine, keyword);
 
     // 创建新的 <script> 标签
     let newScript = document.createElement('script');
@@ -25,22 +25,22 @@ function changeJS(searchengine,keyword) {
     // 将新的 <script> 标签添加到 <head> 的最后
     head.appendChild(newScript);
 }
-function backURL(searchengine,keyword){
-    if (searchengine==0){
-        return("https://suggestion.baidu.com/su?wd=" + keyword + "&p=3&cb=jsonp");
+function backURL(searchengine, keyword) {
+    if (searchengine == 0) {
+        return ("https://suggestion.baidu.com/su?wd=" + keyword + "&p=3&cb=jsonp");
     }
-    if (searchengine==1){
-        return("https://sg1.api.bing.com/qsonhs.aspx?type=cb&cb=jsonp&q=" + keyword);
+    if (searchengine == 1) {
+        return ("https://sg1.api.bing.com/qsonhs.aspx?type=cb&cb=jsonp&q=" + keyword);
     }
 }
 //3.处理返回的数据
 //[jsonp]
 function jsonp(data) {
     let obj = data;
-    if (searchengine == 0){
+    if (searchengine == 0) {
         refreshMenu_keyword(obj.s);
     }
-    if (searchengine == 1){
+    if (searchengine == 1) {
         let list = [];
         //必应的搜索有AS和VS两种关键词
         //判断长度
@@ -54,22 +54,22 @@ function jsonp(data) {
 }
 //4.完成刷新操作
 //[html元素操作]
-function refreshMenu_keyword(keyword){
+function refreshMenu_keyword(keyword) {
     //完成刷新操作：更改列表大小->清空列表->添加列表
     var key_words_bar_box = document.getElementById('key_words_bar_box');
     var key_words_bar = document.getElementById('key_words_bar');
-    var num1 = 36+keyword.length*20+(keyword.length-1)*3;
-    var num2 = 25+keyword.length*20+(keyword.length-1)*3;
-    key_words_bar_box.style.height = `${num1}`+"px";
-    key_words_bar.style.height = `${num2}`+"px";
-    for (let i = 0;i < 10;i++){
-	    removeKeyword();
+    var num1 = 36 + keyword.length * 20 + (keyword.length - 1) * 3;
+    var num2 = 25 + keyword.length * 20 + (keyword.length - 1) * 3;
+    key_words_bar_box.style.height = `${num1}` + "px";
+    key_words_bar.style.height = `${num2}` + "px";
+    for (let i = 0; i < 10; i++) {
+        removeKeyword();
     }
-    for (let i = 0;i < keyword.length;i++){
-	    addKeyword(keyword[i]);
+    for (let i = 0; i < keyword.length; i++) {
+        addKeyword(keyword[i]);
     }
 }
-function removeKeyword(){
+function removeKeyword() {
     // 移除 id 为 keyword 的标签
     var keywordToRemove = document.getElementById('keyword');
     let newKeywordmenu = document.getElementById('key_words_bar')
@@ -77,7 +77,7 @@ function removeKeyword(){
         newKeywordmenu.removeChild(keywordToRemove);
     }
 }
-function addKeyword(keyword){
+function addKeyword(keyword) {
     let newKeywordmenu = document.getElementById('key_words_bar')
     if (newKeywordmenu) {
         // 创建li元素
@@ -85,7 +85,7 @@ function addKeyword(keyword){
         li.id = 'keyword';
         li.className = 'button keyword';
         li.tabIndex = "0";
-        li.setAttribute("onclick","refocus();toSearchTigger(event);");
+        li.setAttribute("onclick", "refocus();toSearchTigger(event);");
         // 向li中添加文本内容
         li.innerHTML = keyword;
         // 向指定div中插入li
