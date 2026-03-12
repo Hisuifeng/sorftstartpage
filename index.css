@@ -127,7 +127,7 @@ body {
 #key_words_bar_box {
     background-color: #ffffff5f;
     /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a;
+    box-shadow: 0 30px 45px #00000042;
     /* 添加阴影效果 */
     backdrop-filter: blur(3px);
     /* 应用模糊效果 */
@@ -183,8 +183,26 @@ li {
     transition-duration: 300ms;
 }
 
+
 ::-webkit-scrollbar {
-    display: none;
+    width: 12px; /* 滚动条的宽度 */
+    height: 12px; /* 滚动条的高度 */
+}
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* 轨道的背景色 */
+    border-radius: 10px; /* 轨道的圆角 */
+}
+
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #c2c2c2; /* 滑块的背景色 */
+    border-radius: 10px; /* 滑块的圆角 */
+}
+/* 滑块悬停效果 */
+::-webkit-scrollbar-thumb:hover {
+    background: #9a9a9a; /* 悬停时滑块的背景色 */
 }
 
 /* 以前有美化，但是效果不好删了 */
@@ -253,7 +271,7 @@ li {
 }
 
 #blur {
-    background-color: #ffffff13;
+    background-color: #00000070;
     /* 设置背景颜色并使其部分透明 */
     box-shadow: 0 30px 45px #0000001a;
     /* 添加阴影效果 */
@@ -326,15 +344,15 @@ li {
     border-radius: 0 10px 10px 0;
     margin-left: 30%;
     height: 100%;
+    overflow-y:auto;
 
-    background-color: #ffffffb2;
+    background-color: #ffffff81;
     /* 设置背景颜色并使其部分透明 */
     box-shadow: 0 30px 45px #0000001a;
     /* 添加阴影效果 */
     backdrop-filter: blur(3px);
     /* 应用模糊效果 */
 
-    overflow-x: auto;
     clip-path: inset(0px 0px);
     /* 裁剪 */
 }
@@ -346,7 +364,7 @@ li {
 .setting_input {
     background-color: #ffffff5f;
     /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #0000001a;
+    box-shadow: 0 30px 45px #1919191a;
     /* 添加阴影效果 */
     backdrop-filter: blur(6px);
     /* 应用模糊效果 */
@@ -434,7 +452,7 @@ li {
 .button_normal {
     background-color: #ffffff5f;
     /* 设置背景颜色并使其部分透明 */
-    box-shadow: 0 30px 45px #00000054;
+    box-shadow: 0 20px 35px #20202039;
     /* 添加阴影效果 */
     backdrop-filter: blur(3px);
     /* 应用模糊效果 */
@@ -452,6 +470,7 @@ li {
     /* 容器高度-居中 */
 
     width: 60px;
+
     position: relative;
     float: right;
     right: 5%;
@@ -459,4 +478,13 @@ li {
 
 .button {
     transition: all 100ms ease 0s;
+}
+
+.button_normal_setting_box{
+    height: 60px;
+}
+
+.button_normal_setting_highlight p{
+    color: #626262;
+    font-size: 14px;
 }

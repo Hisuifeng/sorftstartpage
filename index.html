@@ -19,8 +19,7 @@
 
     <div class="search_bar">
         <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()"
-            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyupEvent(event);"
-            placeholder='欢迎使用轻-sorft起始页！'>
+            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyupEvent(event);" placeholder='欢迎使用轻-sorft起始页！'>
         <div id="key_words_bar_box" tabindex=0>
             <div id="key_words_bar">
                 <li id="searchengine" class="button" tabindex="0" onclick="refocus()">搜索引擎：必应(Alt+任意键切换)</li>
@@ -58,7 +57,8 @@
         <div id="setting_bar_right">
             <div id="setting_bar_right_favorite">
                 <p class="ps-setting">快捷方式</p>
-                <p class="pss-setting">|快捷方式设置</p>
+                <hr>
+                <p class="pss-setting">| 快捷方式设置</p>
                 <p class="pss-setting">第一个快捷方式</p>
                 <div class="setting_bar_right_input">
                     <input id="setting_input1_url" class="setting_input" type="text" placeholder='url'>
@@ -83,12 +83,15 @@
                     <p></p>
                     <input id="setting_input4_icon" class="setting_input" type="text" placeholder='icon'>
                 </div>
-                <p class="button button_normal button_normal_setting" onclick="setFavorite()">保存</p>
-                <p></p>
+
+                <div class="button_normal_setting_box">
+                    <p class="button button_normal button_normal_setting" onclick="setFavorite()">保存</p>
+                </div>
             </div>
             <div id="setting_bar_right_wallpaper">
                 <p class="ps-setting">背景</p>
-                <p class="pss-setting">|壁纸设置</p>
+                <hr>
+                <p class="pss-setting">| 壁纸设置</p>
                 <div class="setting_bar_right_input">
                     <img id="setting_wallpaper" src="" style="width: 70%;height: 70%;border-radius: 10px;">
                     <p class="pss-setting">目前使用的图片背景</p>
@@ -97,21 +100,22 @@
                 <div class="setting_bar_right_input">
                     <input id="setting_input_wallpaperurl" class="setting_input" type="text" placeholder='壁纸链接'>
                 </div>
-                <p class="button button_normal button_normal_setting" onclick="setWallpaperCookie()">保存</p>
-                <p class="pss-setting">|关于壁纸设置的说明</p>
-                <p class="pss-setting">在该功能开发时考虑过多种情况，随机壁纸存在效率问题，除非本地部署，即使是使用了图床也不可避免有着加载慢的问题。因此默认情况下使用静态壁纸:(</p>
-                <p class="pss-setting">如何使用随机壁纸呢？</p>
-                <p class="pss-setting">在壁纸链接中输入数字保存后即可使用随机壁纸。</p>
-                <p class="pss-setting">-1 使用默认壁纸</p>
-                <p class="pss-setting">0 使用仓库随机壁纸</p>
-                <p class="pss-setting">1 使用api随机壁纸</p>
-                <p class="pss-setting">当然，你也可以使用现成的随机壁纸api并输入到壁纸链接输入框中。</p>
+                <div class="button_normal_setting_box">
+                    <p class="button button_normal button_normal_setting" onclick="setWallpaperCookie()">保存</p>
+                </div>
+                <div class="button_normal_setting_highlight">
+                    <p class="pss-setting">|关于壁纸设置的说明</p>
+                    <p class="pss-setting">在该功能开发时考虑过多种情况，随机壁纸存在效率问题，除非本地部署，即使是使用了图床也不可避免有着加载慢的问题。因此默认情况下使用静态壁纸:(</p>
+                    <p class="pss-setting">如何使用随机壁纸呢？</p>
+                    <p class="pss-setting">在壁纸链接中输入数字保存后即可使用随机壁纸。</p>
+                    <p class="pss-setting">-1 使用默认壁纸</p>
+                    <p class="pss-setting">0 使用仓库随机壁纸</p>
+                    <p class="pss-setting">1 使用api随机壁纸</p>
+                    <p class="pss-setting">当然，你也可以使用现成的随机壁纸api并输入到壁纸链接输入框中。</p>
+                </div>
             </div>
         </div>
     </div>
-
-
-
 
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="time.js"></script>

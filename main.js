@@ -186,7 +186,6 @@ function showElements(Element) {
     ];
     Elements.animate(keyframes, 200);
 }
-
 //搜索框文字
 var id_autoTask = setInterval(autoTask, 5000);
 var id_autoText
