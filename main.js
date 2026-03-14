@@ -12,6 +12,16 @@ var searchengine = 1;
 //初始函数
 
 //1.触发器
+window.onblur = function () {
+    document.title = "轻-sorft起始页";
+    console.log("失去焦点");
+    endAutoText();
+}//失去焦点
+window.onfocus = function () {
+    document.title = "搜索些什么......";
+    console.log("获得焦点");
+    startAutoText();
+}//获得焦点
 document.onmousemove = (event) => {
     var windowWidth = window.innerWidth / 2;
     var windowHeight = window.innerHeight / 2;
@@ -90,12 +100,10 @@ function clickSetting() {
     showElements("blur")
 }
 function clickFavoriteBar() {
-    showElements("setting_bar_right_favorite")
-    unshowElements("setting_bar_right_wallpaper")
+    scrollToElement("setting_bar_right_favorite")
 }
 function clickWallpaperBar() {
-    unshowElements("setting_bar_right_favorite")
-    showElements("setting_bar_right_wallpaper")
+    scrollToElement("setting_bar_right_wallpaper")
 }
 function clickExit() {
     unshowElements("setting_bar")
@@ -114,8 +122,18 @@ function changeChooseEngineBarText(text) {
     var searchenginebar = document.getElementById('searchengine');
     searchenginebar.innerHTML = text;
 }
+function sleep(ms) {
+    //请使用async/await
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //UI函数集
+function scrollToElement(elementId) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 function setWallpaper(walllpaperNum, type, walllpaperurl) {
     if (type == -1 || type != -1) {
         var url = "https://pic1.zhimg.com/v2-19d657e1f93c77e381205bf64d37ed58_r.jpg";
@@ -187,11 +205,18 @@ function showElements(Element) {
     Elements.animate(keyframes, 200);
 }
 //搜索框文字
-var id_autoTask = setInterval(autoTask, 5000);
-var id_autoText
+var id_autoTask;
+var id_autoText;
 var global_i = 0;
 var global_t = 1;
 var text = "";
+function startAutoText() {
+    id_autoTask = setInterval(autoTask, 5000);
+}
+function endAutoText() {
+    clearInterval(id_autoText);
+    clearInterval(id_autoTask);
+}
 function autoText() {
     global_i += 1;
     document.getElementById("search_bar").setAttribute("placeholder", text.substring(0, global_i));
