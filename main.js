@@ -30,7 +30,10 @@ document.onmousemove = (event) => {
     background.style.transform = 'translate3d(-' + mouseX + '%, -' + mouseY + '%, 0)';
 };
 function keywordfun() {
-    changeJS(searchengine, document.getElementById('search_bar').value);
+    let keyword = document.getElementById('search_bar').value;
+    if (keyword != "") {
+        changeJS(searchengine, keyword);
+    }
     choosetag = -1;//设置指针为默认状态
 }
 function unshowSearchKeyWordBarTigger() {
@@ -74,16 +77,24 @@ function keyupEvent(event) {
         }
     }//downarrow事件
     if (event.keyCode && event.keyCode == 18) {
-        if (searchengine == 0) {
-            changeChooseEngineBarText("搜索引擎：必应(Alt+任意键切换)")
-            searchengine = 1;
-            keywordfun()//刷新提示词
+        let text;
+        searchengine++;
+        if (searchengine > 2 || searchengine < 0) {
+            searchengine = 0;
         }
-        else {
-            changeChooseEngineBarText("搜索引擎：百度(Alt+任意键切换)")
-            searchengine = 0
-            keywordfun()
-        };
+        if (searchengine == 0) {
+            text = "必应";
+            keywordfun();//刷新提示词
+        }
+        if (searchengine == 1) {
+            text = "百度";
+            keywordfun();
+        }
+        if (searchengine == 2) {
+            text = "谷歌";
+            keywordfun();
+        }
+        changeChooseEngineBarText("搜索引擎：" + text + "(Alt+任意键切换 推荐Ctrl + Alt)");
     }//alt_l+ctrl事件(切换搜索引擎)
 }
 function refocus() {
@@ -116,6 +127,9 @@ function toSearch(searchengine, keyword) {
     }
     if (searchengine == 1) {
         window.location.href = "https://cn.bing.com/search?q=" + keyword;
+    }
+    if (searchengine == 2) {
+        window.location.href = "https://www.google.com/search?q=" + keyword;
     }
 }
 function changeChooseEngineBarText(text) {

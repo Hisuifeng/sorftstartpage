@@ -32,6 +32,9 @@ function backURL(searchengine, keyword) {
     if (searchengine == 1) {
         return ("https://sg1.api.bing.com/qsonhs.aspx?type=cb&cb=jsonp&q=" + keyword);
     }
+    if (searchengine == 2) {
+        return ("https://suggestqueries.google.com/complete/search?client=firefox&q=" + keyword + "&callback=jsonp")
+    }
 }
 //3.处理返回的数据
 //[jsonp]
@@ -50,6 +53,9 @@ function jsonp(data) {
             }
         }
         refreshMenu_keyword(list);
+    }
+    if (searchengine == 2) {
+        refreshMenu_keyword(obj[1]);
     }
 }
 //4.完成刷新操作
