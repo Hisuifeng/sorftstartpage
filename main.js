@@ -1,9 +1,9 @@
 let arttext =
-    " __   __   __   ___ ___     __        __   ___ \n" +
-    '/__` /  \\ |__) |__   |     |__)  /\\  / _` |__  \n' +
-    '.__/ \\__/ |  \\ |     |     |    /~~\\ \\__> |___ \n\n' +
-    'Welcome to sorft start page!Bug created by Hikari.\n' +
-    '主函数已加载，欢迎使用轻-sorft起始页！';
+    " __   __    ___ ___     __        __   ___ \n" +
+    '/__` /  \\  |__   |     |__)  /\\  / _` |__  \n' +
+    '.__/ \\__/  |     |     |    /~~\\ \\__> |___ \n\n' +
+    'Welcome to soft start page!Bug created by Hikari.\n' +
+    '主函数已加载，欢迎使用轻-soft起始页！';
 console.log(arttext);
 //全局变量
 var choosetag = -1;
@@ -13,13 +13,11 @@ var searchengine = 1;
 
 //1.触发器
 window.onblur = function () {
-    document.title = "轻-sorft起始页";
-    console.log("失去焦点");
+    document.title = "轻-soft起始页";
     endAutoText();
 }//失去焦点
 window.onfocus = function () {
     document.title = "搜索些什么......";
-    console.log("获得焦点");
     startAutoText();
 }//获得焦点
 document.onmousemove = (event) => {
@@ -241,7 +239,7 @@ function autoText() {
 }
 function autoTask() {
     if (global_t == 0) {
-        text = "欢迎使用轻-sorft起始页！";
+        text = "欢迎使用轻-soft起始页！";
     }
     if (global_t == 1) {
         text = "在此输入搜索内容";

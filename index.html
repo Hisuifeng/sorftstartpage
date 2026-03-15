@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.png">
-    <title>轻-sorft起始页</title>
+    <title>轻-soft起始页</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script id="s2" type="text/javascript" src=""></script>
 </head>
 
 <body id="body">
     <div id="background"></div>
-    <div class="time_bar button" onclick="window.location.href='https://time.is/'">
+    <button class="time_bar button" onclick="window.location.href='https://time.is/'">
         <div class="time">
             <p id="time_min">00:00</p>
         </div>
-    </div>
+    </button>
 
     <div class="search_bar">
         <input id="search_bar" type="text" onfocus="unshowUrlBar()" onblur="unshowSearchKeyWordBarTigger()"
-            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyupEvent(event);" placeholder='欢迎使用轻-sorft起始页！'>
+            oninput="keywordfun();showSearchKeyWordBar();" onkeydown="keyupEvent(event);" placeholder='欢迎使用轻-soft起始页！'>
         <div id="key_words_bar_box" tabindex=0>
             <div id="key_words_bar">
                 <li id="searchengine" class="button" tabindex="0" onclick="refocus()">搜索引擎：必应(Alt+任意键切换 推荐Ctrl + Alt)</li>
@@ -28,23 +28,23 @@
     </div>
 
     <div id="url_bar">
-        <div id="url1" class="button button_normal url" onclick="window.location.href='https://github.com/'">
+        <button id="url1" class="button button_normal url" onclick="window.location.href='https://github.com/'">
             <img id="url1_img" class="url_img" src="images/github_favicon.png">
-        </div>
-        <div id="url2" class="button button_normal url" onclick="window.location.href='https://github.com/'">
+        </button>
+        <button id="url2" class="button button_normal url" onclick="window.location.href='https://github.com/'">
             <img id="url2_img" class="url_img" src="images/github_favicon.png">
-        </div>
-        <div id="url3" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
+        </button>
+        <button id="url3" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
             <img id="url3_img" class="url_img" src="images/bilibili_favicon.ico">
-        </div>
-        <div id="url4" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
+        </button>
+        <button id="url4" class="button button_normal url" onclick="window.location.href='https://www.bilibili.com'">
             <img id="url4_img" class="url_img" src="images/bilibili_favicon.ico">
-        </div>
+        </button>
     </div>
 
     <img id="button_setting" class="button_normal button" src="images/setting.png" onclick="clickSetting()">
     <p id="button_img" class="button"
-        onclick="window.location.href='https://github.com/Hisuifeng/sorftstartpage/issues/1'">喜欢这张图片吗？</p>
+        onclick="window.location.href='https://github.com/Hisuifeng/softstartpage/issues/1'">喜欢这张图片吗？</p>
 
     <div id="blur" onclick="clickExit()"></div>
     <div id="setting_bar">
